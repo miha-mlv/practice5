@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProductActivity">
+
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:id="@+id/listview_2"
+        android:layout_width="288dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:choiceMode="multipleChoice"
+        app:layout_constraintTop_toBottomOf="@+id/select_product" />
+
+    <EditText
+        android:id="@+id/select_product"
+        android:layout_width="285dp"
+        android:layout_height="50dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addProduct_btn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/select_product"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/removeProduct_btn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/addProduct_btn"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

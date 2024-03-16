@@ -1,19 +1,32 @@
 package com.example.practice5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Products {
-    private String[] prosucts;
-    private Integer count;
+    public List<String> products = new ArrayList<String>();
+    private Integer count = 0;
     public void addItem(String nameItem)
     {
-        prosucts[count] = nameItem;
+        products.add(nameItem);
         count+=1;
     }
     public String[] getAllItem()
     {
-        return prosucts;
+//        String[] arrProducts = new String[count];
+//        for(int i = 0; i < count; i++)
+//        {
+//            arrProducts[i] = products.get(i);
+//        }
+        return products.toArray(new String[count]);
     }
     public Integer getCount()
     {
         return count;
+    }
+    public void remove(int index)
+    {
+        products.remove(index);
+        count--;
     }
 }
