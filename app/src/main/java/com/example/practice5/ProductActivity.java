@@ -95,10 +95,15 @@ public class ProductActivity extends AppCompatActivity {
                 {
                     Toast.makeText(ProductActivity.this, "Выберите товар", Toast.LENGTH_SHORT).show();
                 }
-                for(int i = 0; i < selectProduct.size(); i++)
+//                for(int i = 0; i < selectProduct.size(); i++)
+//                {
+//                    products.remove(selectProduct.get(i));
+//                }\
+                if(selectProduct.size() > 1)
                 {
-                    products.remove(selectProduct.get(i));
+                    selectProduct.remove(0);
                 }
+                products.remove(selectProduct);
                 updateListView();
                 listCategory.clearChoices();
                 selectProduct.clear();

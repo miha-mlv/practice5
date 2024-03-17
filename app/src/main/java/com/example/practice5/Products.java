@@ -31,7 +31,10 @@ public class Products {
 //    }
 public void remove(List<Integer> index)
     {
-        products.remove(index);
-        count--;
+        for(int i = 0; i < index.size(); i++)
+        {
+            products.remove(Math.abs(i-index.get(i)));
+        }
+        count = count - index.size();
     }
 }
