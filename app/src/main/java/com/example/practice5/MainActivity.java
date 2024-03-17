@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private List<DataModel> dataList;
+    private Button scroll, spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,42 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         dataList = new ArrayList<>();
-        dataList.add(new DataModel(R.drawable.ananas, "Item 1"));
-        dataList.add(new DataModel(R.drawable.meet, "Item 2"));
-        dataList.add(new DataModel(R.drawable.milk, "Item 3"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
+        dataList.add(new DataModel(R.drawable.ananas, "Fruits"));
+        dataList.add(new DataModel(R.drawable.meet, "Meat"));
+        dataList.add(new DataModel(R.drawable.milk, "Dairy products"));
 
         adapter = new DataAdapter(dataList, this);
         recyclerView.setAdapter(adapter);
+        scroll = findViewById(R.id.scroll);
+        spinner = findViewById(R.id.spinner);
+        scroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScrollActivity.class);
+                startActivity(intent);
+            }
+        });
+        spinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
