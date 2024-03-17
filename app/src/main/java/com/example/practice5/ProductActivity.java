@@ -100,6 +100,9 @@ public class ProductActivity extends AppCompatActivity {
                     products.remove(selectProduct.get(i));
                 }
                 updateListView();
+                listCategory.clearChoices();
+                selectProduct.clear();
+
             }
         });
     }

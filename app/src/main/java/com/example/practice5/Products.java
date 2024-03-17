@@ -24,7 +24,12 @@ public class Products {
     {
         return count;
     }
-    public void remove(int index)
+//    public void remove(int index)
+//    {
+//        products.remove(index);
+//        count--;
+//    }
+public void remove(List<Integer> index)
     {
         products.remove(index);
         count--;
